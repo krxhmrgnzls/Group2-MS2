@@ -1,4 +1,5 @@
 package MainPackage;
+
 import java.awt.Component;
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,6 +31,7 @@ public class Request extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel3 = new javax.swing.JPanel();
         RequestPane = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         sendselectedbtn = new javax.swing.JButton();
@@ -38,9 +40,18 @@ public class Request extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         PreviousTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        RequestPane.setBackground(new java.awt.Color(153, 153, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        sendselectedbtn.setBackground(new java.awt.Color(153, 153, 255));
+        sendselectedbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         sendselectedbtn.setText("Send Selected");
         sendselectedbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,6 +59,8 @@ public class Request extends javax.swing.JFrame {
             }
         });
 
+        RequestTable.setBackground(new java.awt.Color(204, 204, 255));
+        RequestTable.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         RequestTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -66,25 +79,31 @@ public class Request extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(691, Short.MAX_VALUE)
-                        .addComponent(sendselectedbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(sendselectedbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sendselectedbtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sendselectedbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(265, 265, 265))
         );
 
         RequestPane.addTab("Request Status", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        PreviousTable.setBackground(new java.awt.Color(204, 204, 255));
+        PreviousTable.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         PreviousTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -111,27 +130,52 @@ public class Request extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         RequestPane.addTab("Previous Status", jPanel2);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("Home");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(RequestPane)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(57, 57, 57))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(RequestPane, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(RequestPane)
-                .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addComponent(RequestPane, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -140,6 +184,13 @@ public class Request extends javax.swing.JFrame {
     private void sendselectedbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendselectedbtnActionPerformed
        JOptionPane.showMessageDialog(Request.this, "Successfully Sent to Admin!", "Information", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_sendselectedbtnActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        this.dispose();
+        Dashboard dash = new Dashboard();
+        dash.setVisible(true);
+        
+    }//GEN-LAST:event_jLabel1MouseClicked
     private void loadCSVIntoTable(String csvFilePath) {
     File csvFile = new File(csvFilePath);
     if (!csvFile.isFile()) {
@@ -150,14 +201,13 @@ public class Request extends javax.swing.JFrame {
         String row;
         List<String[]> data = new ArrayList<>();
         while ((row = csvReader.readLine()) != null) {
-            String[] dataRow = row.split(","); // Assuming comma is the delimiter
+            String[] dataRow = row.split(","); 
             data.add(dataRow);
         }
-        String[] columnNames = data.remove(0); // Assuming the first row is column headers
+        String[] columnNames = data.remove(0); 
         DefaultTableModel model = new DefaultTableModel(columnNames, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                // Only the fifth column (Status) is editable
                 return column == 4;
             }
         };
@@ -206,10 +256,10 @@ public class Request extends javax.swing.JFrame {
         String row;
         List<String[]> data = new ArrayList<>();
         while ((row = csvReader.readLine()) != null) {
-            String[] dataRow = row.split(","); // Assuming comma is the delimiter
+            String[] dataRow = row.split(","); 
             data.add(dataRow);
         }
-        String[] columnNames = data.remove(0); // Assuming the first row is column headers
+        String[] columnNames = data.remove(0); 
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         for (String[] rowData : data) {
             model.addRow(rowData);
@@ -224,7 +274,7 @@ public class Request extends javax.swing.JFrame {
 
    public static void main(String args[]) {
     try {
-        // Set to system look and feel
+       
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
     } catch (Exception e) {
         e.printStackTrace();
@@ -244,8 +294,10 @@ public class Request extends javax.swing.JFrame {
     private javax.swing.JTable PreviousTable;
     private javax.swing.JTabbedPane RequestPane;
     private javax.swing.JTable RequestTable;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton sendselectedbtn;

@@ -24,7 +24,7 @@ public class PayrollManagement extends javax.swing.JFrame {
     public PayrollManagement() {
         initComponents();
         loadCSVIntoTable("C:\\Users\\Krixhia\\Documents\\NetBeansProjects\\MotorPH-PayrollSystem\\src\\MainPackage\\Salary Information.csv");
-        loadCSVIntoProcessTable("C:\\Users\\Krixhia\\Documents\\NetBeansProjects\\MotorPH-PayrollSystem\\src\\MainPackage\\Process Payroll.csv");
+        loadCSVIntoProcessTable("C:\\Users\\Krixhia\\Documents\\NetBeansProjects\\MotorPH-PayrollSystem\\src\\MainPackage\\Process.csv");
         
     }
     
@@ -35,6 +35,8 @@ public class PayrollManagement extends javax.swing.JFrame {
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
+        jPanel3 = new javax.swing.JPanel();
+        homelbl = new javax.swing.JLabel();
         ProcessPayroll = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -44,7 +46,6 @@ public class PayrollManagement extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         payrolltable = new javax.swing.JTable();
         sendbtn = new javax.swing.JButton();
-        homelbl = new javax.swing.JLabel();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -54,6 +55,19 @@ public class PayrollManagement extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        homelbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        homelbl.setText("Home");
+        homelbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homelblMouseClicked(evt);
+            }
+        });
+
+        ProcessPayroll.setBackground(new java.awt.Color(153, 153, 255));
+
+        salarytable.setBackground(new java.awt.Color(204, 204, 255));
         salarytable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -73,6 +87,8 @@ public class PayrollManagement extends javax.swing.JFrame {
             salarytable.getColumnModel().getColumn(3).setHeaderValue("Title 4");
         }
 
+        processbtn.setBackground(new java.awt.Color(153, 153, 255));
+        processbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         processbtn.setText("Process Selected");
         processbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,24 +101,28 @@ public class PayrollManagement extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(696, Short.MAX_VALUE)
-                .addComponent(processbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(processbtn)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(processbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(processbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE))
         );
 
         ProcessPayroll.addTab("Salary Center", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        payrolltable.setBackground(new java.awt.Color(204, 204, 255));
         payrolltable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -117,15 +137,9 @@ public class PayrollManagement extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(payrolltable);
-        if (payrolltable.getColumnModel().getColumnCount() > 0) {
-            payrolltable.getColumnModel().getColumn(0).setHeaderValue("Total of Compensation");
-            payrolltable.getColumnModel().getColumn(1).setHeaderValue("Batch Number");
-            payrolltable.getColumnModel().getColumn(2).setHeaderValue("Proposed Date");
-            payrolltable.getColumnModel().getColumn(3).setHeaderValue("Check Date");
-            payrolltable.getColumnModel().getColumn(4).setHeaderValue("View ");
-            payrolltable.getColumnModel().getColumn(5).setHeaderValue("Status");
-        }
 
+        sendbtn.setBackground(new java.awt.Color(153, 153, 255));
+        sendbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         sendbtn.setText("Send Selected");
         sendbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +153,7 @@ public class PayrollManagement extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -152,39 +166,43 @@ public class PayrollManagement extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(sendbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(282, Short.MAX_VALUE))
         );
 
         ProcessPayroll.addTab("Process Payroll", jPanel2);
 
-        homelbl.setText("Home");
-        homelbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homelblMouseClicked(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(homelbl)
+                .addGap(27, 27, 27))
+            .addComponent(ProcessPayroll, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(homelbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ProcessPayroll, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ProcessPayroll)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(homelbl)
-                .addGap(17, 17, 17))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(homelbl)
-                .addGap(18, 18, 18)
-                .addComponent(ProcessPayroll, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -272,7 +290,7 @@ public class PayrollManagement extends javax.swing.JFrame {
             String[] dataRow = row.split(",");
             data.add(dataRow);
         }
-        String[] columnNames = data.remove(0); // This removes the headers from data and stores it in columnNames
+        String[] columnNames = data.remove(0); 
         DefaultTableModel model = (DefaultTableModel) payrolltable.getModel();
         model.setColumnIdentifiers(columnNames);
         model.setRowCount(0);
@@ -280,7 +298,7 @@ public class PayrollManagement extends javax.swing.JFrame {
         for (String[] rowData : data) {
             model.addRow(rowData);
         }
-        setUpStatusColumnForPayrollTable(model.getColumnCount() - 1); // Assuming the "Status" column is the last column
+        setUpStatusColumnForPayrollTable(model.getColumnCount() - 1);
 
     } catch (IOException ex) {
         ex.printStackTrace();
@@ -289,20 +307,14 @@ public class PayrollManagement extends javax.swing.JFrame {
    }
   
    
-    public static void main(String args[]) {
-      
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PayrollManagement().setVisible(true);
-            }
-        });
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane ProcessPayroll;
     private javax.swing.JLabel homelbl;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private java.awt.Menu menu1;
